@@ -117,24 +117,23 @@ describe('Albums Controller', function() {
             expect(albums.delete).to.be.a('function');
         });
 
-        it('should return json on save', function() {
-            var albumSpy = {remove: sinon.spy()};
+        it('should return json on delete', function() {
+            var albumSpy = { remove: sinon.spy() };
             modelsStub.Album = {
                 findOne: function(query, callback) {
                     callback(null, albumSpy);
                 }
             };
-
             albums.delete(req, res);
             expect(albumSpy.remove).calledOnce;
         });
-        it('should return error on failed save', function() {
+
+        it('should return error on failed delete', function() {
             modelsStub.Album = {
                 findOne: function(query, callback) {
                     callback({}, {});
                 }
             };
-
             albums.delete(req, res);
             expect(res.json).calledWith({error: 'Album not found.'});
         });

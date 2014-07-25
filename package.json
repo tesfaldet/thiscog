@@ -1,6 +1,6 @@
 {
   "name": "thiscog",
-  "description": "Web app for uploading and displaying album information using node, express, mongodb, backbone, and marionette. Tools include Grunt, Bower, Browserfy, etc.",
+  "description": "Web app for uploading and displaying album information using node, express, mongodb, backbone, and marionette. Tools include Grunt, Bower, Browserify, etc.",
   "version": "0.0.1",
   "author": "Matthew Tesfaldet",
   "repository": {
