@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
 	require('time-grunt')(grunt);
-	requre('load-grunt-tasks')(grunt);
+	require('load-grunt-tasks')(grunt);
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -225,7 +225,8 @@ module.exports = function(grunt) {
         jshint: {
             all: ['Gruntfile.js', 'client/src/**/*.js', 'client/spec/**/*.js'],
             dev: ['client/src/**/*.js'],
-            test: ['client/spec/**/*.js']
+            test: ['client/spec/**/*.js'],
+            server: ['app/*.js', 'controllers/*.js', 'server.js']
         }
 	});
 
@@ -243,4 +244,6 @@ module.exports = function(grunt) {
     grunt.registerTask('tdd', ['karma:watcher:start', 'concurrent:test']);
 
     grunt.registerTask('test', ['test:server', 'test:client']);
+
+    grunt.registerTask('lint', ['jshint:all', 'jshint:server']);
 };

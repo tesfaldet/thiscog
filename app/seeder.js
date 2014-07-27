@@ -9,7 +9,7 @@ module.exports = {
                 console.log('no albums found, seeding...');
                 var newAlbum = new models.Album({
                     artist: 'Tame Impala',
-                    title: 'InnerSpeaker'
+                    title: 'InnerSpeaker',
                     year: '2010',
                     genre: 'Psych-rock',
                     cover: {
@@ -23,7 +23,7 @@ module.exports = {
 
                 newAlbum = new models.Album({
                     artist: 'Tame Impala',
-                    title: 'Lonerism'
+                    title: 'Lonerism',
                     year: '2012',
                     genre: 'Psych-rock',
                     cover: {
@@ -37,7 +37,7 @@ module.exports = {
 
                 newAlbum = new models.Album({
                     artist: 'St. Lucia',
-                    title: 'When The Night'
+                    title: 'When The Night',
                     year: '2013',
                     genre: 'Indietronica',
                     cover: {

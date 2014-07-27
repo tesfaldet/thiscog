@@ -1,4 +1,4 @@
-var models = require('../app/models'),
+var models = require('../app/models');
 
 module.exports = {
     index: function(req, res) {
@@ -32,7 +32,7 @@ module.exports = {
             } else {
                 album.remove(function(err, album){
                     res.json(200, {status: 'Success'});
-                })
+                });
             }
         });
     }
