@@ -226,7 +226,7 @@ module.exports = function(grunt) {
             all: ['Gruntfile.js', 'client/src/**/*.js', 'client/spec/**/*.js'],
             dev: ['client/src/**/*.js'],
             test: ['client/spec/**/*.js'],
-            server: ['app/*.js', 'controllers/*.js', 'server.js']
+            server: ['app/*.js', 'controllers/*.js', 'spec/**/*.js', 'server.js']
         }
 	});
 

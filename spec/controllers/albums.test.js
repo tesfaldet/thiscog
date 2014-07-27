@@ -5,7 +5,7 @@ var proxyquire = require('proxyquire'),
     });
 
 var res = {},
-	req = {};
+    req = {};
 
 describe('Albums Controller', function() {
     beforeEach(function() {
@@ -64,41 +64,41 @@ describe('Albums Controller', function() {
     });
 
     describe('add', function() {
-    	beforeEach(function() {
-    		req.body = {
-    			artist: 'testArtist',
-    			title: 'testTitle',
-    			year: 'testYear',
-    			genre: 'testGenre',
-    			cover: new Buffer(1)
-    		}
-    	});
+        beforeEach(function() {
+            req.body = {
+                artist: 'testArtist',
+                title: 'testTitle',
+                year: 'testYear',
+                genre: 'testGenre',
+                cover: new Buffer(1)
+            }
+        });
 
-    	it('should be defined', function() {
-    		expect(albums.add).to.be.a('function');
-    	});
+        it('should be defined', function() {
+            expect(albums.add).to.be.a('function');
+        });
 
-    	it('should return json on save', function() {
-    		modelsStub.Album = sinon.spy(function() {
-    			modelsStub.Album.prototype.save = function(callback) {
-    				callback(null, req.body);
-    			};
-    			return;
-    		});
-    		albums.add(req, res);
-    		expect(res.json).calledWith(req.body);
-    	});
+        it('should return json on save', function() {
+            modelsStub.Album = sinon.spy(function() {
+                modelsStub.Album.prototype.save = function(callback) {
+                    callback(null, req.body);
+                };
+                return;
+            });
+            albums.add(req, res);
+            expect(res.json).calledWith(req.body);
+        });
 
-    	it('should return error on failed save', function() {
-    		modelsStub.Album = sinon.spy(function() {
-    			modelsStub.Album.prototype.save = function(callback) {
-    				callback({}, req.body);
-    			};
-    			return;
-    		});
-    		albums.add(req, res);
-    		expect(res.json).calledWith({error: 'Error adding contact.'});
-    	});
+        it('should return error on failed save', function() {
+            modelsStub.Album = sinon.spy(function() {
+                modelsStub.Album.prototype.save = function(callback) {
+                    callback({}, req.body);
+                };
+                return;
+            });
+            albums.add(req, res);
+            expect(res.json).calledWith({error: 'Error adding album.'});
+        });
     });
 
     describe('delete', function() {
@@ -106,10 +106,10 @@ describe('Albums Controller', function() {
             req.body = {
                 id: '1',
                 artist: 'testArtist',
-    			title: 'testTitle',
-    			year: 'testYear',
-    			genre: 'testGenre',
-    			cover: new Buffer(1)
+                title: 'testTitle',
+                year: 'testYear',
+                genre: 'testGenre',
+                cover: new Buffer(1)
             };
         });
 
