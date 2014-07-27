@@ -8,11 +8,11 @@ var express = require('express'),
     app = express();
 
 // view engine setup
-app.set('views', __dirname + '/views');
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'handlebars');
 app.engine('handlebars', exphbs({
     defaultLayout: 'main',
-    layoutsDir: app.get('views') + '/layouts'
+    layoutsDir: path.join(app.get('views'), 'layouts')
 }));
 
 // set server port
