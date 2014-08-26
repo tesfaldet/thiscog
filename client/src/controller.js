@@ -1,7 +1,7 @@
 var Marionette = require('backbone.marionette'),
 	AlbumsView = require('./views/albums'),
 	AlbumDetailsView = require('./views/album_details'),
-	AddContactView = require('./views/add');
+	AddAlbumView = require('./views/add');
 
 module.exports = Controller = Marionette.Controller.extend({
 	initialize: function() {
