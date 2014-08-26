@@ -33,5 +33,13 @@ App.prototype.start = function() {
 			App.core.vent.trigger('app:log', 'App: Backbone.history starting');
 			Backbone.history.start();
 		}
+
+		App.core.vent.trigger('app:log', 'App: Done starting and running!')
 	});
+
+	App.core.vent.bind('app:log', function(msg) {
+		console.log(msg);
+	});
+
+	App.core.start();
 }
