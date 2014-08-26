@@ -71,7 +71,7 @@ describe('Albums Controller', function() {
                 year: 'testYear',
                 genre: 'testGenre',
                 cover: new Buffer(1)
-            }
+            };
         });
 
         it('should be defined', function() {
