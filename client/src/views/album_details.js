@@ -4,7 +4,7 @@ module.exports = AlbumDetailsView = Marionette.ItemView.extend({
 	template: require('../../templates/album_details.hbs'),
 	events: {
 		'click a.back': 'goBack',
-		'click a.delete': 'deleteContact'
+		'click a.delete': 'deleteAlbum'
 	},
 
 	goBack: function(e) {
