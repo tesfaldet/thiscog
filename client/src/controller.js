@@ -6,7 +6,7 @@ var Marionette = require('backbone.marionette'),
 module.exports = Controller = Marionette.Controller.extend({
 	initialize: function() {
 		App.core.vent.trigger('app:log', 'Controller: Initializing');
-		window.App.Views.albumsView = new AlbumsView({ collection: window.App.data.albums });
+		window.App.views.albumsView = new AlbumsView({ collection: window.App.data.albums });
 	},
 
 	home: function() {
@@ -17,7 +17,7 @@ module.exports = Controller = Marionette.Controller.extend({
 	},
 
 	details: function(id) {
-		App.core.vent.trigger('app:log', 'Controller: "Album Details" route hit.');
+		App.core.vent.trigger('app:log', 'Controller: "Album Details" route hit (' + id + ').');
 		var view = new AlbumDetailsView({ model: window.App.data.albums.get(id) });
 		this.renderView(view);
 		window.App.router.navigate('details/' + id);

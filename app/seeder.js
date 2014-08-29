@@ -46,7 +46,7 @@ module.exports = {
                     }
                 });
                 newAlbum.save(function(err, album) {
-                    console.log('successfully inserted alubm: ' + album._id);
+                    console.log('successfully inserted album: ' + album._id);
                 });
             } else {
                 console.log('found ' + albums.length + ' existing albums!');
