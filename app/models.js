@@ -8,7 +8,7 @@ var Album = new Schema({
     year:              { type: String },
     genre:             { type: String },  
     cover: {
-        data:          Buffer,
+        data:          { type: String },
         contentType:   { type: String }
     }
 });

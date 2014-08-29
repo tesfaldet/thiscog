@@ -13,8 +13,8 @@ module.exports = {
                     year: '2010',
                     genre: 'Psych-rock',
                     cover: {
-                        data: fs.readFileSync(__dirname + '/../images/Innerspeaker.jpg'),
-                        contentType: 'image/jpg'
+                        data: fs.readFileSync(__dirname + '/../images/Innerspeaker.jpg', 'base64'),
+                        contentType: 'image/jpeg'
                     }
                 });
                 newAlbum.save(function(err, album) {
@@ -27,8 +27,8 @@ module.exports = {
                     year: '2012',
                     genre: 'Psych-rock',
                     cover: {
-                        data: fs.readFileSync(__dirname + '/../images/Lonerism.jpeg'),
-                        contentType: 'image/jpg'
+                        data: fs.readFileSync(__dirname + '/../images/Lonerism.jpeg', 'base64'),
+                        contentType: 'image/jpeg'
                     }
                 });
                 newAlbum.save(function(err, album) {
@@ -41,8 +41,8 @@ module.exports = {
                     year: '2013',
                     genre: 'Indietronica',
                     cover: {
-                        data: fs.readFileSync(__dirname + '/../images/WhenTheNight.jpg'),
-                        contentType: 'image/jpg'
+                        data: fs.readFileSync(__dirname + '/../images/WhenTheNight.jpg', 'base64'),
+                        contentType: 'image/jpeg'
                     }
                 });
                 newAlbum.save(function(err, album) {

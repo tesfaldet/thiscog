@@ -15365,29 +15365,29 @@ var Handlebars = require('hbsfy/runtime');
 module.exports = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  buffer += "<div class=\"album_full\">\n    <img src=\"../img/Innerspeaker.jpg\"/>\n    <br/><br/>\n    <strong>Artist:</strong> ";
-  if (stack1 = helpers.artist) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.artist; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + " ";
-  if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
+  buffer += "<div class=\"album_full\">\n    <img src=\"data:"
+    + escapeExpression(((stack1 = ((stack1 = depth0.cover),stack1 == null || stack1 === false ? stack1 : stack1.contentType)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ";base64,"
+    + escapeExpression(((stack1 = ((stack1 = depth0.cover),stack1 == null || stack1 === false ? stack1 : stack1.data)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/>\n    <br/><br/>\n    <strong>Artist:</strong> ";
+  if (stack2 = helpers.artist) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.artist; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
     + "<br/>\n    <strong>Album Title:</strong> ";
-  if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
+  if (stack2 = helpers.title) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.title; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
     + "<br/>\n    <strong>Year:</strong> ";
-  if (stack1 = helpers.year) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.year; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
+  if (stack2 = helpers.year) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.year; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
     + "<br/>\n    <strong>Genre:</strong> ";
-  if (stack1 = helpers.genre) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.genre; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
+  if (stack2 = helpers.genre) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.genre; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
     + "<br/><br/>\n</div>\n\n<a href=\"#\" class=\"back\"><< Back</a> | <a href=\"#\" class=\"delete\">Delete Album</a>\n";
   return buffer;
   });
@@ -15398,21 +15398,25 @@ var Handlebars = require('hbsfy/runtime');
 module.exports = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  buffer += "<div class=\"album_small\">\n    <img src=\"../img/Innerspeaker.jpg\"/>\n    <strong>";
-  if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
+  buffer += "<div class=\"album_small\">\n    <img src=\"data:"
+    + escapeExpression(((stack1 = ((stack1 = depth0.cover),stack1 == null || stack1 === false ? stack1 : stack1.contentType)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ";base64,"
+    + escapeExpression(((stack1 = ((stack1 = depth0.cover),stack1 == null || stack1 === false ? stack1 : stack1.data)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" />\n    <strong>";
+  if (stack2 = helpers.title) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.title; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
     + " by: ";
-  if (stack1 = helpers.artist) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.artist; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
+  if (stack2 = helpers.artist) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.artist; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
     + "</strong><br/>\n    ";
-  if (stack1 = helpers.genre) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.genre; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
+  if (stack2 = helpers.genre) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.genre; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
     + "\n</div>\n";
   return buffer;
   });
