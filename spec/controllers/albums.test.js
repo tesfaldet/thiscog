@@ -70,7 +70,10 @@ describe('Albums Controller', function() {
                 title: 'testTitle',
                 year: 'testYear',
                 genre: 'testGenre',
-                cover: new Buffer(1)
+                cover: {
+                    data: 'testData',
+                    contentType: 'testContentType'
+                }
             };
         });
 
@@ -109,7 +112,10 @@ describe('Albums Controller', function() {
                 title: 'testTitle',
                 year: 'testYear',
                 genre: 'testGenre',
-                cover: new Buffer(1)
+                cover: {
+                    data: 'testData',
+                    contentType: 'testContentType'
+                }
             };
         });
 

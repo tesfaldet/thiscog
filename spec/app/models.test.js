@@ -32,7 +32,7 @@ describe('Models', function() {
 
         it('should have cover fields', function() {
             expect(schema['cover.data']).to.exist;
-            expect(schema['cover.data'].instance).to.equal('Buffer');
+            expect(schema['cover.data'].instance).to.equal('String');
             expect(schema['cover.contentType']).to.exist;
             expect(schema['cover.contentType'].instance).to.equal('String');
         });

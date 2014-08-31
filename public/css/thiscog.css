@@ -175,7 +175,7 @@ label {
 }
 .album_full {
   float: none;
-  height: 325px;
+  height: 337px;
 }
 .album_full img {
   margin-left: 5px;
@@ -188,14 +188,7 @@ label {
   float: left;
   clear: left;
 }
-#output {
-  margin-top: 2em;
-  font-size: .9em;
-  border: solid 1px #c0c0c0;
-  background-color: #f0f0f0;
-  padding: 5px;
-}
-#output li {
-  margin-left: 30px;
-  list-style-type: decimal;
+.add_album img {
+  width: 250px;
+  height: 250px;
 }

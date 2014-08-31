@@ -22,10 +22,9 @@ module.exports = AddView = Marionette.ItemView.extend({
 				contentType: previewType
 			}
 		};
-		console.log(newAlbum);
-		//window.App.data.albums.create(newAlbum);
+		window.App.data.albums.create(newAlbum);
 		window.App.core.vent.trigger('app:log', 'Add View: Saved new album!');
-		//window.App.controller.home();
+		window.App.controller.home();
 	},
 
 	viewThumbnail: function(e) {

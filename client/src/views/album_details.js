@@ -14,7 +14,7 @@ module.exports = AlbumDetailsView = Marionette.ItemView.extend({
 
 	deleteAlbum: function(e) {
 		e.preventDefault();
-		console.log('Deleting album');
+		console.log('Deleting album ' + this.model.id);
 		window.App.data.albums.remove(this.model);
 		this.model.destroy(); // sends a DELETE to server
 		window.App.controller.home();
