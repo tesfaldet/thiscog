@@ -15283,7 +15283,9 @@ module.exports = AddView = Marionette.ItemView.extend({
 	template: require('../../templates/add.hbs'),
 	events: {
 		'click a.save-button': 'save',
-		'change #cover': 'viewThumbnail'
+		'change #cover': 'viewThumbnail',
+		'dragover #preview': 'handleDragOver',
+		'drop #preview': 'handleDrop'
 	},
 
 	save: function(e) {
@@ -15324,6 +15326,20 @@ module.exports = AddView = Marionette.ItemView.extend({
 
 		// Read in image file as a data URL.
 		reader.readAsDataURL(file);
+	},
+
+	handleDragOver: function(e) {
+		e.stopPropagation();
+		e.preventDefault();
+		// Explicitly show this is a copy.
+		e.originalEvent.dataTransfer.dropEffect = 'copy';
+	},
+
+	handleDrop: function(e) {
+		e.stopPropagation();
+		e.preventDefault();
+		// Set file information for cover. Taken from drag data.
+		this.$el.find('#cover').prop('files', e.originalEvent.dataTransfer.files);
 	}
 });
 },{"../../templates/add.hbs":10}],8:[function(require,module,exports){
@@ -15382,7 +15398,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"add_album\">\n    <label for=\"artist\">Artist:</label> <input type=\"text\" id=\"artist\" /><br/>\n    <label for=\"title\">Album Title:</label> <input type=\"text\" id=\"title\" /><br/>\n    <label for=\"year\">Year:</label> <input type=\"text\" id=\"year\" /><br/>\n    <label for=\"genre\">Genre:</label> <input type=\"text\" id=\"genre\" /><br/>\n    <input type=\"file\" id=\"cover\"><br/>\n    <img src=\"\" id=\"preview\"/>\n    <br/>\n    <a href=\"#\" class=\"save-button\">Upload</a> | <a href=\"#\"><< Back</a>\n</div>\n";
+  return "<div class=\"add_album\">\n    <label for=\"artist\">Artist:</label> <input type=\"text\" id=\"artist\" /><br/>\n    <label for=\"title\">Album Title:</label> <input type=\"text\" id=\"title\" /><br/>\n    <label for=\"year\">Year:</label> <input type=\"text\" id=\"year\" /><br/>\n    <label for=\"genre\">Genre:</label> <input type=\"text\" id=\"genre\" /><br/>\n    <input type=\"file\" id=\"cover\"><br/>\n    <img src=\"\" id=\"preview\" draggable=\"true\"/>\n    <br/>\n    <a href=\"#\" class=\"save-button\">Upload</a> | <a href=\"#\"><< Back</a>\n</div>\n";
   });
 
 },{"hbsfy/runtime":16}],11:[function(require,module,exports){

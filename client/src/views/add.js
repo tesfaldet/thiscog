@@ -4,7 +4,9 @@ module.exports = AddView = Marionette.ItemView.extend({
 	template: require('../../templates/add.hbs'),
 	events: {
 		'click a.save-button': 'save',
-		'change #cover': 'viewThumbnail'
+		'change #cover': 'viewThumbnail',
+		'dragover #preview': 'handleDragOver',
+		'drop #preview': 'handleDrop'
 	},
 
 	save: function(e) {
@@ -45,5 +47,19 @@ module.exports = AddView = Marionette.ItemView.extend({
 
 		// Read in image file as a data URL.
 		reader.readAsDataURL(file);
+	},
+
+	handleDragOver: function(e) {
+		e.stopPropagation();
+		e.preventDefault();
+		// Explicitly show this is a copy.
+		e.originalEvent.dataTransfer.dropEffect = 'copy';
+	},
+
+	handleDrop: function(e) {
+		e.stopPropagation();
+		e.preventDefault();
+		// Set file information for cover. Taken from drag data.
+		this.$el.find('#cover').prop('files', e.originalEvent.dataTransfer.files);
 	}
 });
