@@ -15282,22 +15282,49 @@ var Marionette = require('backbone.marionette');
 module.exports = AddView = Marionette.ItemView.extend({
 	template: require('../../templates/add.hbs'),
 	events: {
-		'click a.save-button': 'save'
+		'click a.save-button': 'save',
+		'change #cover': 'viewThumbnail'
 	},
 
 	save: function(e) {
 		e.preventDefault();
+		var preview = this.$el.find('#preview').attr('src').split(',');
+		var previewData = preview[1];
+		var previewType = preview[0].match(/image\/\w+/g)[0];
 		var newAlbum = {
 			artist: this.$el.find('#artist').val(),
 			title: this.$el.find('#title').val(),
 			year: this.$el.find('#year').val(),
-			genre: this.$el.find('#genre').val()
-
+			genre: this.$el.find('#genre').val(),
+			cover: {
+				data: previewData,
+				contentType: previewType
+			}
 		};
-
-		window.App.data.albums.create(newAlbum);
+		console.log(newAlbum);
+		//window.App.data.albums.create(newAlbum);
 		window.App.core.vent.trigger('app:log', 'Add View: Saved new album!');
-		window.App.controller.home();
+		//window.App.controller.home();
+	},
+
+	viewThumbnail: function(e) {
+		e.preventDefault();
+		var preview = this.$el.find('#preview');
+		
+		// Grab file information from memory.
+		var file = this.$el.find('#cover').prop('files')[0];
+		
+		var reader = new FileReader();
+		
+		// Closure to preview the file information on reader load.
+		reader.onload = (function(f) {
+			return function(e) {
+				preview.attr('src', reader.result);
+			};
+		})(file);
+
+		// Read in image file as a data URL.
+		reader.readAsDataURL(file);
 	}
 });
 },{"../../templates/add.hbs":10}],8:[function(require,module,exports){
@@ -15356,7 +15383,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"add_album\">\n    <label for=\"artist\">Artist:</label> <input type=\"text\" id=\"artist\" /><br/>\n    <label for=\"title\">Album Title:</label> <input type=\"text\" id=\"title\" /><br/>\n    <label for=\"year\">Year:</label> <input type=\"text\" id=\"year\" /><br/>\n    <label for=\"genre\">Genre:</label> <input type=\"text\" id=\"genre\" /><br/>\n    <br/>\n    <a href=\"#\" class=\"save-button\">Upload</a> | <a href=\"#\"><< Back</a>\n</div>\n";
+  return "<div class=\"add_album\">\n    <label for=\"artist\">Artist:</label> <input type=\"text\" id=\"artist\" /><br/>\n    <label for=\"title\">Album Title:</label> <input type=\"text\" id=\"title\" /><br/>\n    <label for=\"year\">Year:</label> <input type=\"text\" id=\"year\" /><br/>\n    <label for=\"genre\">Genre:</label> <input type=\"text\" id=\"genre\" /><br/>\n    <input type=\"file\" id=\"cover\"><br/>\n    <img src=\"\" id=\"preview\"/>\n    <br/>\n    <a href=\"#\" class=\"save-button\">Upload</a> | <a href=\"#\"><< Back</a>\n</div>\n";
   });
 
 },{"hbsfy/runtime":16}],11:[function(require,module,exports){
@@ -15405,7 +15432,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     + escapeExpression(((stack1 = ((stack1 = depth0.cover),stack1 == null || stack1 === false ? stack1 : stack1.contentType)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + ";base64,"
     + escapeExpression(((stack1 = ((stack1 = depth0.cover),stack1 == null || stack1 === false ? stack1 : stack1.data)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\" />\n    <strong>";
+    + "\"/><br/>\n    <strong>";
   if (stack2 = helpers.title) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
   else { stack2 = depth0.title; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
   buffer += escapeExpression(stack2)
