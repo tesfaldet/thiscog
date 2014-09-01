@@ -6,9 +6,30 @@ A simple album discography manager written on the NEMB stack (node.js, ExpressJS
 
 ## Technologies
 
-* node.js / ExpressJS
-
-..* Chai 
+* Backbone.js
+  * Handlebars
+  * Browserify
+  * Jasmine tests
+* Node.js / ExpressJS
+  * Handlebars
+  * Mocha test runner
+  * Chai assertions, Sinon spies, Proxyquire dependency overriding
+* MongoDB
+  * Mongoose
+* Bower
+  * package.json
+* Grunt:
+  * Bower install
+  * Browserify
+  * Handlebars (precompiled templates)
+  * jsHint
+  * LESS
+  * CSS/JS minification/uglification
+  * Karma client testing/tdd
+  * Mocha node testing
+  * Watchers
+  * Concatenation/Copy
+  * Concurrent runs (server, karma, mongod, etc)
 
 ## Requirements
 
@@ -43,6 +64,8 @@ This will:
 8. Start the mongo shell;
 
 9. Start watchers on scripts, less files, and test files for rebuild and test.
+
+Connect to localhost:3500 to view app locally.
 
 ### Front-end Tests/TDD:
 
