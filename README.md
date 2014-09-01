@@ -7,6 +7,7 @@ A simple album discography manager written on the NEMB stack (node.js, ExpressJS
 ## Technologies
 
 * node.js / ExpressJS
+
 ..* Chai 
 
 ## Requirements
@@ -31,7 +32,7 @@ This will:
 
 3. jshint client/src/**/*.js;
 
-4. less transpile client/styles/reset.css, client/requires/*/css/*, and client/styles/less/main.less into build/thiscog.css;
+4. less transpile client/styles/reset.css, client/requires/\*/css/*, and client/styles/less/main.less into build/thiscog.css;
 
 5. concat build/vendor.js and build/app.js into build/thiscog.js;
 
