@@ -6,8 +6,8 @@ A simple album discography manager written on the NEMB stack (node.js, ExpressJS
 
 ## Technologies
 
-	* node.js / ExpressJS
-		* Chai 
+* node.js / ExpressJS
+..* Chai 
 
 ## Requirements
 
@@ -24,14 +24,23 @@ node 0.10.x, npm, and mongodb.
 	$ grunt server
 
 This will:
+
 1. clean build/app.js, build/thiscog.js, and build/thiscog.css (but not build/vender.js or build/tests.js since they rarely change);
+
 2. Browserify client/src/main.js into build/app.js and client/spec/**/*.test.js into build/tests.js;
+
 3. jshint client/src/**/*.js;
+
 4. less transpile client/styles/reset.css, client/requires/*/css/*, and client/styles/less/main.less into build/thiscog.css;
+
 5. concat build/vendor.js and build/app.js into build/thiscog.js;
+
 6. copy build/thiscog.js, build/thiscog.css, and client/img/* into public/js/thiscog.js, public/css/thiscog.css, and public/img/* respectively;
+
 7. Start the node server in DEV mode with nodemon watching the app for a relaunch;
+
 8. Start the mongo shell;
+
 9. Start watchers on scripts, less files, and test files for rebuild and test.
 
 ### Front-end Tests/TDD:
@@ -61,6 +70,4 @@ Note:
 Will run both back-end and front-end tests.
 
 ### Trello
-Check out my progress on Trello!
-
-https://trello.com/b/T0gVgFFM/thiscog
+Check out my progress on [https://trello.com/b/T0gVgFFM/thiscog](Trello)!
