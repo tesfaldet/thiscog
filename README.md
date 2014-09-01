@@ -70,4 +70,4 @@ Note:
 Will run both back-end and front-end tests.
 
 ### Trello
-Check out my progress on [https://trello.com/b/T0gVgFFM/thiscog](Trello)!
+Check out my progress on [Trello](https://trello.com/b/T0gVgFFM/thiscog)!
