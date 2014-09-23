@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/tesfaldet/thiscog.svg?branch=master)](https://travis-ci.org/tesfaldet/thiscog)
 
-A simple album discography manager written on the NEMB stack (node.js, ExpressJS, MongoDB, Backbone.js). It consists of a complete backend using node.js with ExpressJS, a data layer using MongoDB with Mongoose, and a complete front-end application built using Backbone.js (with Marionette and Browserify).
+TestA simple album discography manager written on the NEMB stack (node.js, ExpressJS, MongoDB, Backbone.js). It consists of a complete backend using node.js with ExpressJS, a data layer using MongoDB with Mongoose, and a complete front-end application built using Backbone.js (with Marionette and Browserify).
 
 ## Technologies
 
